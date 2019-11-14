@@ -11,9 +11,9 @@
     <Folder Include="Response\" />
     <Folder Include="Request\" />
     <Folder Include="Request\Contact\" />
-    <Folder Include="ACModel\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="Microsoft.CSharp" Version="4.6.0" />
   </ItemGroup>
 </Project>

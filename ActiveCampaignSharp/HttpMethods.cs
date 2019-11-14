@@ -1,6 +1,8 @@
-﻿using System;
-namespace ActiveCampaignSharp
+﻿namespace ActiveCampaignSharp
 {
+    /// <summary>
+    /// Represents a subset of HTTP verbs.
+    /// </summary>
     public enum HttpMethods
     {
         GET,
