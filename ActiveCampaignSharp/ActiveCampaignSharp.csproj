@@ -2,8 +2,19 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <PackOnBuild>true</PackOnBuild>
+    <PackageVersion>0.0.1</PackageVersion>
+    <Authors>Spark Digital Inc</Authors>
+    <Copyright>2019 Spark Digital Inc</Copyright>
+    <PackageLicenseUrl>https://github.com/SparkDigitalMedia/ActiveCampaignSharp/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <PackageProjectUrl>https://github.com/SparkDigitalMedia/ActiveCampaignSharp</PackageProjectUrl>
+    <Description>An SDK for interacting with the ActiveCampaign API.</Description>
   </PropertyGroup>
 
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType></DebugType>
+  </PropertyGroup>
   <ItemGroup>
     <Compile Remove="Class1.cs" />
   </ItemGroup>
@@ -13,7 +24,7 @@
     <Folder Include="Request\Contact\" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
     <PackageReference Include="Microsoft.CSharp" Version="4.6.0" />
   </ItemGroup>
 </Project>

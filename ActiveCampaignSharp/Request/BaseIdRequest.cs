@@ -1,5 +1,4 @@
-﻿using System;
-namespace ActiveCampaignSharp.Request
+﻿namespace ActiveCampaignSharp.Request
 {
     public abstract class BaseIdRequest : BaseRequest
     {

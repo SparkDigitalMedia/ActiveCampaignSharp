@@ -108,8 +108,18 @@ namespace ActiveCampaignSharp
             switch (request.Method)
             {
                 case HttpMethods.GET:
-                    var getIdRequest = request as BaseIdRequest;
-                    response = await _httpClient.GetAsync(getIdRequest.ActionWithId);
+                    if (request is BaseIdRequest getIdRequest)
+                    {
+                        response = await _httpClient.GetAsync(getIdRequest.ActionWithId);
+                    }
+                    else if(request is BaseRequestWithFilter filterRequest)
+                    {
+                        response = await _httpClient.GetAsync(filterRequest.FullAction);
+                    }
+                    else
+                    {
+                        throw new ActiveCampaignException("Attempted GET on non-implemented GET.");
+                    }
                     break;
                 case HttpMethods.POST:
                     response = await _httpClient.PostAsync(request.Action, new StringContent(JsonConvert.SerializeObject(request)));
